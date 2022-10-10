@@ -5,7 +5,7 @@ RUN apt-get update
 RUN apt-get install -y wget
 
  
-COPY ./payment-service/target/*.jar payment-service.jar
+COPY --from=build ./payment-service/target/*.jar payment-service.jar
 
 EXPOSE 8080
 
